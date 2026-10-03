@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -728,6 +734,7 @@ button:hover {
         min-height: auto;
         padding: 36px 20px;
         border-width: 5px;
+        overflow: hidden;
     }
 
     h1,
@@ -770,6 +777,19 @@ button:hover {
     .jokes-container,
     .friends-grid {
         grid-template-columns: 1fr;
+    }
+
+    .joke,
+    .friend-card,
+    .memory-note,
+    .bucket-note,
+    .polaroid {
+        transform: none;
+    }
+
+    .polaroid:hover,
+    .friend-card:hover {
+        transform: none;
     }
 
     .navigation {
