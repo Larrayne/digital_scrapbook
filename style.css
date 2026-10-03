@@ -29,7 +29,7 @@ body {
 .cover {
     position: relative;
 
-    width: 420px;
+    width: min(100%, 420px);
     min-height: 650px;
 
     padding: 55px 40px;
@@ -186,7 +186,7 @@ button:hover {
 .memory-page {
     position: relative;
 
-    width: 850px;
+    width: min(100%, 850px);
     min-height: 600px;
 
     padding: 55px;
@@ -460,7 +460,7 @@ button:hover {
 .letter-page {
     position: relative;
 
-    width: 850px;
+    width: min(100%, 850px);
     min-height: 650px;
 
     padding: 55px;
@@ -710,4 +710,113 @@ button:hover {
 .bucket-note span {
     color: #b86f82;
     font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    .scrapbook {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .cover,
+    .memory-page,
+    .letter-page {
+        min-height: auto;
+        padding: 36px 20px;
+        border-width: 5px;
+    }
+
+    h1,
+    .memory-page h1,
+    .letter-page h1 {
+        font-size: 36px;
+        line-height: 1.05;
+    }
+
+    .subtitle,
+    .intro,
+    .letter p {
+        font-size: 16px;
+    }
+
+    .memory-card {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .memory-text {
+        text-align: center;
+    }
+
+    .polaroid,
+    .memory-card .photo-placeholder {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .polaroid img {
+        height: 210px;
+    }
+
+    .tape {
+        display: none;
+    }
+
+    .jokes-container,
+    .friends-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navigation button,
+    .memory-page > button,
+    .letter-page > button,
+    .cover > button {
+        width: 100%;
+    }
+
+    .memory-page > button + button,
+    .letter-page > button + button,
+    .cover > button + button {
+        margin-top: 12px;
+    }
+
+    .letter {
+        padding: 22px 18px;
+    }
+
+    .bucket-item {
+        align-items: flex-start;
+        padding: 14px 16px;
+    }
+
+    .bucket-item span {
+        font-size: 15px;
+    }
+
+    .memory-note,
+    .bucket-note {
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 18px;
+    }
+
+    .page-number {
+        position: static;
+        margin-bottom: 12px;
+        text-align: right;
+    }
+
+    .small-title {
+        letter-spacing: 3px;
+    }
 }
